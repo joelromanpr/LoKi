@@ -1,0 +1,3 @@
+rootProject.name = "LoKi"
+include ':app'
+include ':loki'
