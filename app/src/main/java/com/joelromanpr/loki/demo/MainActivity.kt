@@ -1,10 +1,10 @@
 package com.joelromanpr.loki.demo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.joelromanpr.loki.R
+import androidx.appcompat.app.AppCompatActivity
+import com.joelromanpr.loki.LokiActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : LokiActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

@@ -50,7 +50,7 @@ internal object PasscodeManager {
         return b.toString()
     }
 
-    private fun refreshTimeStamp(context: Context) = getSharedPrefs(context).edit().putLong(
+    fun refreshTimeStamp(context: Context) = getSharedPrefs(context).edit().putLong(
         KEY_LOKI_PASSCODE_TIME_STAMP, System.currentTimeMillis()
     ).apply()
 

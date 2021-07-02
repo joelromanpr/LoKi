@@ -18,6 +18,9 @@
 package com.joelromanpr.loki
 
 internal const val ONE_SECOND_MILLIS = 1000L
+internal const val MINUTE_IN_MILLIS = 1000 * 60
+internal const val HOUR_IN_MILLIS = MINUTE_IN_MILLIS * 60
+internal const val CONFIRM_CREDENTIAL = 965 //AD. easter egg for devs ;)
 internal const val KEY_LOKI_PASSCODE = "loki_passcode"
 internal const val KEY_LOKI_PASSCODE_SALT = "loki_passcode_salt"
 internal const val KEY_LOKI_PASSCODE_ACTIVE = "loki_passcode_active"
