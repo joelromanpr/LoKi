@@ -18,6 +18,7 @@
 package com.joelromanpr.loki
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -25,48 +26,49 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.annotation.StringRes
 
-class PasscodeView @JvmOverloads constructor(
+internal class PasscodeView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyle: Int = 0
-) : FrameLayout(context, attrs, defStyle), View.OnClickListener {
+    defStyle: Int = 0,
+    defStyleRes: Int = 0
+) : FrameLayout(context, attrs, defStyle, defStyleRes), View.OnClickListener {
 
     private val pinLength = 4
-    private val passcodePinsViews: ArrayList<PasscodePinView>
-    private val numberButtonViews: ArrayList<Button>
-    private val delButtonView: Button
-    private val titleTextView: TextView
-    private val layoutPasscodePins: View
+    private val passcodePinsViews: MutableList<PasscodePinView> = ArrayList(pinLength)
+    private val numberButtonViews: MutableList<Button> = mutableListOf()
+    private lateinit var delButtonView: Button
+    private lateinit var titleTextView: TextView
+    private lateinit var layoutPasscodePins: View
     private var passcodeInputListener: PasscodeInputListener? = null
 
     private val code: MutableList<Int> = mutableListOf()
 
-    init {
+    fun init() {
         val view: View = LayoutInflater.from(context)
             .inflate(R.layout.widget_passcode, this, true)
 
-        passcodePinsViews = ArrayList(pinLength)
-        passcodePinsViews[0] = view.findViewById(R.id.pin1)
-        passcodePinsViews[1] = view.findViewById(R.id.pin2)
-        passcodePinsViews[2] = view.findViewById(R.id.pin3)
-        passcodePinsViews[3] = view.findViewById(R.id.pin4)
+        passcodePinsViews.add(0, view.findViewById(R.id.pin1))
+        passcodePinsViews.add(1, view.findViewById(R.id.pin2))
+        passcodePinsViews.add(2, view.findViewById(R.id.pin3))
+        passcodePinsViews.add(3, view.findViewById(R.id.pin4))
 
         for (pinView in passcodePinsViews) {
             pinView.setActiveColor(android.R.color.black)
         }
 
-        numberButtonViews = ArrayList(10)
-        numberButtonViews[0] = view.findViewById(R.id.button0)
-        numberButtonViews[1] = view.findViewById(R.id.button1)
-        numberButtonViews[2] = view.findViewById(R.id.button2)
-        numberButtonViews[3] = view.findViewById(R.id.button3)
-        numberButtonViews[4] = view.findViewById(R.id.button4)
-        numberButtonViews[5] = view.findViewById(R.id.button5)
-        numberButtonViews[6] = view.findViewById(R.id.button6)
-        numberButtonViews[7] = view.findViewById(R.id.button7)
-        numberButtonViews[8] = view.findViewById(R.id.button8)
-        numberButtonViews[9] = view.findViewById(R.id.button9)
+        numberButtonViews.add(0, view.findViewById(R.id.button0))
+        numberButtonViews.add(1, view.findViewById(R.id.button1))
+        numberButtonViews.add(2, view.findViewById(R.id.button2))
+        numberButtonViews.add(3, view.findViewById(R.id.button3))
+        numberButtonViews.add(4, view.findViewById(R.id.button4))
+        numberButtonViews.add(5, view.findViewById(R.id.button5))
+        numberButtonViews.add(6, view.findViewById(R.id.button6))
+        numberButtonViews.add(7, view.findViewById(R.id.button7))
+        numberButtonViews.add(8, view.findViewById(R.id.button8))
+        numberButtonViews.add(9, view.findViewById(R.id.button9))
+
         for (i in numberButtonViews.indices) {
             numberButtonViews[i].tag = i
             numberButtonViews[i].alpha = 0f
@@ -116,5 +118,13 @@ class PasscodeView @JvmOverloads constructor(
             val shakeAnimation = AnimationUtils.loadAnimation(context, R.anim.shake)
             layoutPasscodePins.startAnimation(shakeAnimation)
         }, 250)
+    }
+
+    fun setTitle(@StringRes title: Int) {
+        titleTextView.setText(title)
+    }
+
+    fun setTitle(title: String) {
+        titleTextView.text = title
     }
 }

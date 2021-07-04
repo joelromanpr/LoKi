@@ -25,19 +25,21 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import kotlin.math.min
 
-class PasscodePinView @JvmOverloads constructor(
+internal class PasscodePinView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyle: Int = 0
-) : View(context, attrs, defStyle) {
+    defStyle: Int = 0,
+    defStyleRes: Int = 0
+) : View(context, attrs, defStyle, defStyleRes) {
 
     private var viewWidth: Int = -1
     private var viewHeight: Int = -1
     private var active: Boolean = false
 
     @ColorRes
-    private var activePinColor = LokiConfig.passcodePinActiveCircleColor
+    private var activePinColor = Loki.config.passcodePinActiveCircleColor
 
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -53,7 +55,7 @@ class PasscodePinView @JvmOverloads constructor(
             isAntiAlias = true
 
             val strokeW: Float = convertDpToPixel(context, 2.0).toFloat()
-            val radius = Math.min(viewWidth, viewHeight) / 2 - strokeW
+            val radius = min(viewWidth, viewHeight) / 2 - strokeW
 
             style = Paint.Style.STROKE
             color = Color.BLACK

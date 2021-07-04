@@ -21,4 +21,16 @@
     <string name="try_again">Try again</string>
     <string name="try_again_in">Try again in</string>
     <string name="enter_your_pin_to_unlock">Enter your PIN to unlock</string>
+    <string name="passcode_setup">Passcode Setup</string>
+    <string name="enter_your_old_pin">Enter your old PIN</string>
+    <string name="set_your_pin_code">Set your PIN code</string>
+    <string name="verify_your_pin_code">Verify your PIN code</string>
+    <string name="set_new_pin_code">Set new PIN code</string>
+    <string-array name="passcode_durations">
+        <item>Immediately</item>
+        <item>after 1 minute</item>
+        <item>after 5 minutes</item>
+        <item>after 30 minutes</item>
+        <item>after 1 hour</item>
+    </string-array>
 </resources>

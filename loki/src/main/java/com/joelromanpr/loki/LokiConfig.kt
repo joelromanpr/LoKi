@@ -19,10 +19,19 @@ package com.joelromanpr.loki
 
 import androidx.annotation.ColorRes
 
-object LokiConfig {
+object Loki {
 
-    var appName: String = "Application"
-    var maxAttempts: Int = 4
-    @ColorRes
-    var passcodePinActiveCircleColor: Int = android.R.color.holo_green_light
+    var config: LokiConfig = LokiConfig()
+        private set
+
+    fun overwriteConfig(newConfig: LokiConfig) {
+        this.config = newConfig
+    }
 }
+
+data class LokiConfig(
+    val appName: String = "Application",
+    val maxAttempts: Int = 4,
+    @ColorRes
+    val passcodePinActiveCircleColor: Int = android.R.color.holo_green_light
+)

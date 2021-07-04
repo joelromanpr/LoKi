@@ -15,19 +15,16 @@
   ~
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    tools:context=".PasscodeSetupActivity">
 
-    <TextView
-        android:id="@+id/passcode_input_title_textview"
-        style="@style/TextAppearance.AppCompat.Body1"
-        android:layout_width="wrap_content"
+    <com.joelromanpr.loki.PasscodeView
+        android:id="@+id/passcode_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/enter_your_pin_to_unlock" />
+        android:layout_gravity="center" />
 
-    <include layout="@layout/view_enter_pin" />
-</LinearLayout>
+</FrameLayout>

@@ -24,7 +24,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class SystemLockActivity : AppCompatActivity() {
+internal class SystemLockActivity : AppCompatActivity() {
 
     companion object {
         fun launch(a: Activity) {
@@ -64,7 +64,7 @@ class SystemLockActivity : AppCompatActivity() {
     }
 
     private fun showAuthScreen() {
-        val i = keyguardManager.createConfirmDeviceCredentialIntent(LokiConfig.appName, null)
+        val i = keyguardManager.createConfirmDeviceCredentialIntent(Loki.config.appName, null)
         if (i != null) startActivityForResult(i, CONFIRM_CREDENTIAL)
     }
 

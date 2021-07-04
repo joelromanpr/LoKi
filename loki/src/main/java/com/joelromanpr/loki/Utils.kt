@@ -20,12 +20,12 @@ package com.joelromanpr.loki
 import android.content.Context
 import android.view.View
 
-fun convertDpToPixel(context: Context, dp: Double): Int {
+internal fun convertDpToPixel(context: Context, dp: Double): Int {
     val density = context.resources.displayMetrics.density
     return (dp * density).toInt()
 }
 
-fun View.show(show: Boolean) {
+internal fun View.show(show: Boolean) {
     if (show) {
         this.visibility = View.VISIBLE
     } else {

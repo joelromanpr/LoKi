@@ -43,7 +43,7 @@
 
         <TextView
             android:id="@+id/lock_header_textview"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -53,7 +53,7 @@
 
         <TextView
             android:id="@+id/lock_sub_header_textview"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
+            style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

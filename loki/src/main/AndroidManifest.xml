@@ -4,6 +4,10 @@
 
     <application>
         <activity
+            android:name=".PasscodeSetupActivity"
+            android:label="@string/passcode_setup"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".PasscodeActivity"
             android:screenOrientation="portrait" />
         <activity

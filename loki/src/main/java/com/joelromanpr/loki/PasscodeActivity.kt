@@ -26,7 +26,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
 
-class PasscodeActivity : AppCompatActivity() {
+internal class PasscodeActivity : AppCompatActivity() {
 
     companion object {
         fun launch(a: Activity) {
@@ -42,6 +42,7 @@ class PasscodeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_passcode)
         disabledLayout = findViewById(R.id.layout_disable)
         val passcodeView = findViewById<PasscodeView>(R.id.passcodeview)
+        passcodeView.init()
 
         passcodeView.setPasscodeInputListener(object : PasscodeInputListener() {
             override fun onInputFinish(passcode: List<Int>) {
@@ -53,7 +54,7 @@ class PasscodeActivity : AppCompatActivity() {
                     passcodeView.shake()
                     attemptsCounter++
                     val now = System.currentTimeMillis()
-                    if (attemptsCounter > LokiConfig.maxAttempts) {
+                    if (attemptsCounter > Loki.config.maxAttempts) {
                         var nextAvailableAttemptTime = now
                         when {
                             attemptsCounter == 4 -> {
@@ -85,6 +86,24 @@ class PasscodeActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        attemptsCounter =PasscodeManager.getFailAttemptsCounter(this)
+        val now = System.currentTimeMillis()
+        val timeLeft = PasscodeManager.getNextAvailableTryTime(this) - now
+        if (timeLeft < ONE_SECOND_MILLIS) {
+            disabledLayout.show(false)
+        } else {
+            disabledLayout.show(true)
+            updateAppDisableTimer(timeLeft)
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        PasscodeManager.setFailAttemptsCounter(this, attemptsCounter)
     }
 
     private fun updateAppDisableTimer(timeLeft: Long) {

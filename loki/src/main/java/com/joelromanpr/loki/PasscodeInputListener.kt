@@ -17,6 +17,6 @@
 
 package com.joelromanpr.loki
 
-abstract class PasscodeInputListener {
+internal abstract class PasscodeInputListener {
     abstract fun onInputFinish(passcode: List<Int>)
 }
