@@ -68,7 +68,7 @@ internal class SystemLockActivity : AppCompatActivity() {
     }
 
     private fun showAuthScreen() {
-        val i = keyguardManager.createConfirmDeviceCredentialIntent(Loki._config.appName, null)
+        val i = keyguardManager.createConfirmDeviceCredentialIntent(Loki.config.appName, null)
         if (i != null) startActivityForResult(i, CONFIRM_CREDENTIAL)
     }
 

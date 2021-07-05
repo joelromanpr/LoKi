@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-       android:id="@+id/s"
+       android:id="@+id/setup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Setup PIN code"

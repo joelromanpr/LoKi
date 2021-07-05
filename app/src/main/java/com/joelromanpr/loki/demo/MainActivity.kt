@@ -11,8 +11,8 @@ class MainActivity : LokiActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<View>(R.id.s).let {
-            it.setOnClickListener { PasscodeSetupActivity.launch(this@MainActivity) }
+        findViewById<View>(R.id.setup).let {
+            it.setOnClickListener { PasscodeSetupActivity.launch(this@MainActivity, true) }
         }
     }
 }

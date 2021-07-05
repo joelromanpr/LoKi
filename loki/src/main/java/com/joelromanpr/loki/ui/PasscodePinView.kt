@@ -41,7 +41,7 @@ internal class PasscodePinView @JvmOverloads constructor(
     private var active: Boolean = false
 
     @ColorRes
-    private var activePinColor = Loki._config.passcodePinActiveCircleColor
+    private var activePinColor = Loki.config.passcodePinActiveCircleColor
 
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

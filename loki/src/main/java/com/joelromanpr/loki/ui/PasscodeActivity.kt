@@ -64,7 +64,7 @@ internal class PasscodeActivity : AppCompatActivity() {
                     passcodeView.clear()
                     attemptsCounter++
                     val now = System.currentTimeMillis()
-                    if (attemptsCounter > Loki._config.maxAttempts) {
+                    if (attemptsCounter > Loki.config.maxAttempts) {
                         var nextAvailableAttemptTime = now
                         when {
                             attemptsCounter == 4 -> {
