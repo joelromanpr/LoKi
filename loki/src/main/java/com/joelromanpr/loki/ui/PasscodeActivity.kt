@@ -15,7 +15,7 @@
  *
  */
 
-package com.joelromanpr.loki
+package com.joelromanpr.loki.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -24,6 +24,14 @@ import android.os.CountDownTimer
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.joelromanpr.loki.Loki
+import com.joelromanpr.loki.PasscodeManager
+import com.joelromanpr.loki.R
+import com.joelromanpr.loki.listeners.PasscodeInputListener
+import com.joelromanpr.loki.utils.HOUR_IN_MILLIS
+import com.joelromanpr.loki.utils.MINUTE_IN_MILLIS
+import com.joelromanpr.loki.utils.ONE_SECOND_MILLIS
+import com.joelromanpr.loki.utils.show
 import kotlin.math.ceil
 
 internal class PasscodeActivity : AppCompatActivity() {
@@ -56,7 +64,7 @@ internal class PasscodeActivity : AppCompatActivity() {
                     passcodeView.clear()
                     attemptsCounter++
                     val now = System.currentTimeMillis()
-                    if (attemptsCounter > Loki.config.maxAttempts) {
+                    if (attemptsCounter > Loki._config.maxAttempts) {
                         var nextAvailableAttemptTime = now
                         when {
                             attemptsCounter == 4 -> {

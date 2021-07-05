@@ -4,15 +4,15 @@
 
     <application>
         <activity
-            android:name=".PasscodeSetupActivity"
+            android:name=".ui.PasscodeSetupActivity"
             android:label="@string/passcode_setup"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PasscodeActivity"
+            android:name=".ui.PasscodeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SystemLockActivity"
+            android:name=".ui.SystemLockActivity"
             android:screenOrientation="portrait" />
     </application>
 

@@ -2,8 +2,8 @@ package com.joelromanpr.loki.demo
 
 import android.os.Bundle
 import android.view.View
-import com.joelromanpr.loki.LokiActivity
-import com.joelromanpr.loki.PasscodeSetupActivity
+import com.joelromanpr.loki.ui.LokiActivity
+import com.joelromanpr.loki.ui.PasscodeSetupActivity
 
 
 class MainActivity : LokiActivity() {

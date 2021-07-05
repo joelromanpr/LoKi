@@ -15,13 +15,20 @@
  *
  */
 
-package com.joelromanpr.loki
+package com.joelromanpr.loki.utils
 
-import androidx.annotation.ColorRes
+import android.content.Context
+import android.view.View
 
-data class LokiConfig(
-    val appName: String = "Application",
-    val maxAttempts: Int = 4,
-    @ColorRes
-    val passcodePinActiveCircleColor: Int = android.R.color.holo_green_light
-)
+internal fun convertDpToPixel(context: Context, dp: Double): Int {
+    val density = context.resources.displayMetrics.density
+    return (dp * density).toInt()
+}
+
+internal fun View.show(show: Boolean) {
+    if (show) {
+        this.visibility = View.VISIBLE
+    } else {
+        this.visibility = View.GONE
+    }
+}

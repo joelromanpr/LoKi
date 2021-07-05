@@ -29,25 +29,25 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <com.joelromanpr.loki.PasscodePinView
+        <com.joelromanpr.loki.ui.PasscodePinView
             android:id="@+id/pin1"
             android:layout_width="@dimen/passcode_pin_diameter"
             android:layout_height="@dimen/passcode_pin_diameter"
             android:layout_marginRight="@dimen/passcode_horizontal_padding" />
 
-        <com.joelromanpr.loki.PasscodePinView
+        <com.joelromanpr.loki.ui.PasscodePinView
             android:id="@+id/pin2"
             android:layout_width="@dimen/passcode_pin_diameter"
             android:layout_height="@dimen/passcode_pin_diameter"
             android:layout_marginRight="@dimen/passcode_horizontal_padding" />
 
-        <com.joelromanpr.loki.PasscodePinView
+        <com.joelromanpr.loki.ui.PasscodePinView
             android:id="@+id/pin3"
             android:layout_width="@dimen/passcode_pin_diameter"
             android:layout_height="@dimen/passcode_pin_diameter"
             android:layout_marginRight="@dimen/passcode_horizontal_padding" />
 
-        <com.joelromanpr.loki.PasscodePinView
+        <com.joelromanpr.loki.ui.PasscodePinView
             android:id="@+id/pin4"
             android:layout_width="@dimen/passcode_pin_diameter"
             android:layout_height="@dimen/passcode_pin_diameter" />

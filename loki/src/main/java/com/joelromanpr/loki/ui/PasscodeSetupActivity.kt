@@ -15,13 +15,17 @@
  *
  */
 
-package com.joelromanpr.loki
+package com.joelromanpr.loki.ui
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.joelromanpr.loki.PasscodeManager
+import com.joelromanpr.loki.R
+import com.joelromanpr.loki.listeners.PasscodeInputListener
+import com.joelromanpr.loki.utils.ONE_SECOND_MILLIS
 import java.util.ArrayList
 
 class PasscodeSetupActivity : AppCompatActivity() {

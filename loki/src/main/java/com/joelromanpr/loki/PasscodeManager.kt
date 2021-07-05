@@ -19,6 +19,15 @@ package com.joelromanpr.loki
 
 import android.content.Context
 import android.preference.PreferenceManager
+import com.joelromanpr.loki.utils.KEY_LOKI_PASSCODE
+import com.joelromanpr.loki.utils.KEY_LOKI_PASSCODE_ACTIVE
+import com.joelromanpr.loki.utils.KEY_LOKI_PASSCODE_ENABLED
+import com.joelromanpr.loki.utils.KEY_LOKI_PASSCODE_FAIL_ATTEMPTS_COUNTER
+import com.joelromanpr.loki.utils.KEY_LOKI_PASSCODE_NEXT_AVAILABLE_TRY_TIME
+import com.joelromanpr.loki.utils.KEY_LOKI_PASSCODE_SALT
+import com.joelromanpr.loki.utils.KEY_LOKI_PASSCODE_TIME_STAMP
+import com.joelromanpr.loki.utils.KEY_LOKI_PASSCODE_VALID_DURATION
+import com.joelromanpr.loki.utils.ONE_SECOND_MILLIS
 import org.apache.commons.codec.binary.Hex
 import org.apache.commons.codec.digest.DigestUtils
 import java.security.SecureRandom

@@ -15,7 +15,7 @@
  *
  */
 
-package com.joelromanpr.loki
+package com.joelromanpr.loki.ui
 
 import android.content.Context
 import android.graphics.Canvas
@@ -25,6 +25,8 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import com.joelromanpr.loki.Loki
+import com.joelromanpr.loki.utils.convertDpToPixel
 import kotlin.math.min
 
 internal class PasscodePinView @JvmOverloads constructor(
@@ -39,7 +41,7 @@ internal class PasscodePinView @JvmOverloads constructor(
     private var active: Boolean = false
 
     @ColorRes
-    private var activePinColor = Loki.config.passcodePinActiveCircleColor
+    private var activePinColor = Loki._config.passcodePinActiveCircleColor
 
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

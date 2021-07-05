@@ -15,7 +15,7 @@
  *
  */
 
-package com.joelromanpr.loki
+package com.joelromanpr.loki.ui
 
 import android.app.Activity
 import android.app.KeyguardManager
@@ -23,6 +23,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.joelromanpr.loki.Loki
+import com.joelromanpr.loki.PasscodeManager
+import com.joelromanpr.loki.R
+import com.joelromanpr.loki.utils.CONFIRM_CREDENTIAL
 
 internal class SystemLockActivity : AppCompatActivity() {
 
@@ -64,7 +68,7 @@ internal class SystemLockActivity : AppCompatActivity() {
     }
 
     private fun showAuthScreen() {
-        val i = keyguardManager.createConfirmDeviceCredentialIntent(Loki.config.appName, null)
+        val i = keyguardManager.createConfirmDeviceCredentialIntent(Loki._config.appName, null)
         if (i != null) startActivityForResult(i, CONFIRM_CREDENTIAL)
     }
 

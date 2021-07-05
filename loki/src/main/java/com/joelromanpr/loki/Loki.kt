@@ -17,6 +17,17 @@
 
 package com.joelromanpr.loki
 
-internal abstract class PasscodeInputListener {
-    abstract fun onInputFinish(passcode: List<Int>)
+import android.content.Context
+
+object Loki {
+
+    val config: LokiConfig get() = _config
+    private var _config: LokiConfig = LokiConfig()
+
+    fun overwriteConfig(newConfig: LokiConfig) {
+        this._config = newConfig
+    }
+
+    fun isActive(context: Context) = PasscodeManager.isPasscodeActive(context)
+
 }

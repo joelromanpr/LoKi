@@ -15,10 +15,11 @@
  *
  */
 
-package com.joelromanpr.loki
+package com.joelromanpr.loki.ui
 
 import android.app.KeyguardManager
 import androidx.appcompat.app.AppCompatActivity
+import com.joelromanpr.loki.PasscodeManager
 
 
 /**

@@ -15,20 +15,8 @@
  *
  */
 
-package com.joelromanpr.loki
+package com.joelromanpr.loki.listeners
 
-import android.content.Context
-import android.view.View
-
-internal fun convertDpToPixel(context: Context, dp: Double): Int {
-    val density = context.resources.displayMetrics.density
-    return (dp * density).toInt()
-}
-
-internal fun View.show(show: Boolean) {
-    if (show) {
-        this.visibility = View.VISIBLE
-    } else {
-        this.visibility = View.GONE
-    }
+internal abstract class PasscodeInputListener {
+    abstract fun onInputFinish(passcode: List<Int>)
 }

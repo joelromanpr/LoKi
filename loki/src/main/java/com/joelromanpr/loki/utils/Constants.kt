@@ -15,7 +15,7 @@
  *
  */
 
-package com.joelromanpr.loki
+package com.joelromanpr.loki.utils
 
 internal const val ONE_SECOND_MILLIS = 1000L
 internal const val MINUTE_IN_MILLIS = 1000 * 60

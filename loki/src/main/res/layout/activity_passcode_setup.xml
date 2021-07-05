@@ -19,9 +19,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PasscodeSetupActivity">
+    tools:context=".ui.PasscodeSetupActivity">
 
-    <com.joelromanpr.loki.PasscodeView
+    <com.joelromanpr.loki.ui.PasscodeView
         android:id="@+id/passcode_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
