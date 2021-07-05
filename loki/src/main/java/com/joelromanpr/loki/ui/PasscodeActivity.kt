@@ -21,6 +21,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -49,6 +50,7 @@ internal class PasscodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_passcode)
+        setupToolbar()
         disabledLayout = findViewById(R.id.layout_disable)
         passcodeView = findViewById(R.id.passcodeview)
         passcodeView.init()
@@ -98,6 +100,13 @@ internal class PasscodeActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    private fun setupToolbar() {
+        actionBar?.setDisplayShowHomeEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onResume() {
@@ -160,6 +169,12 @@ internal class PasscodeActivity : AppCompatActivity() {
         }
         val tryAgainButton = findViewById<Button>(R.id.try_again_button)
         tryAgainButton.text = timeString
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if(id == android.R.id.home) onBackPressed()
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onBackPressed() {

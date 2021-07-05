@@ -54,10 +54,6 @@ internal class PasscodeView @JvmOverloads constructor(
         passcodePinsViews.add(2, view.findViewById(R.id.pin3))
         passcodePinsViews.add(3, view.findViewById(R.id.pin4))
 
-        for (pinView in passcodePinsViews) {
-            pinView.setActiveColor(android.R.color.black)
-        }
-
         numberButtonViews.add(0, view.findViewById(R.id.button0))
         numberButtonViews.add(1, view.findViewById(R.id.button1))
         numberButtonViews.add(2, view.findViewById(R.id.button2))

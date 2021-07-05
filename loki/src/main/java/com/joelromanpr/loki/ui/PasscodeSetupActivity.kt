@@ -47,6 +47,7 @@ class PasscodeSetupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_passcode_setup)
+        setupToolbar()
         passcodeView = findViewById(R.id.passcode_view)
         passcodeView.init()
 
@@ -58,6 +59,13 @@ class PasscodeSetupActivity : AppCompatActivity() {
             passcodeView.setTitle(R.string.set_your_pin_code)
             passcodeView.setPasscodeInputListener(NewPasscodeInputListener())
         }
+    }
+
+    private fun setupToolbar() {
+        actionBar?.setDisplayShowHomeEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -28,6 +28,9 @@ object Loki {
         this._config = newConfig
     }
 
-    fun isActive(context: Context) = PasscodeManager.isPasscodeActive(context)
+    fun isEnabled(context: Context) = PasscodeManager.isFeatureEnabled(context)
+    fun disable(context: Context)  {
+     PasscodeManager.reset(context)
+    }
 
 }

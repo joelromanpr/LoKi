@@ -150,4 +150,11 @@ internal object PasscodeManager {
         .isNullOrEmpty()
         .not()
 
+    fun reset(context: Context) {
+        setFeatureEnabled(context, false)
+        setPasscodeLock(context, emptyList())
+        setFailAttemptsCounter(context, 0)
+        refreshTimeStamp(context)
+    }
+
 }
