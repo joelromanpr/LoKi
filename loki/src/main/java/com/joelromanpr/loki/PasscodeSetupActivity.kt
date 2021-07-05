@@ -107,6 +107,9 @@ class PasscodeSetupActivity : AppCompatActivity() {
                 passcodeView.clear()
             } else {
                 passcodeView.shake()
+                passcodeView.postDelayed({
+                    passcodeView.clear()
+                }, ONE_SECOND_MILLIS)
             }
         }
     }

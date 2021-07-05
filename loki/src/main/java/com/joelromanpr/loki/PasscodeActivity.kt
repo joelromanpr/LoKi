@@ -36,12 +36,13 @@ internal class PasscodeActivity : AppCompatActivity() {
 
     private var attemptsCounter = 0
     private lateinit var disabledLayout: View
+    private lateinit var passcodeView: PasscodeView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_passcode)
         disabledLayout = findViewById(R.id.layout_disable)
-        val passcodeView = findViewById<PasscodeView>(R.id.passcodeview)
+        passcodeView = findViewById(R.id.passcodeview)
         passcodeView.init()
 
         passcodeView.setPasscodeInputListener(object : PasscodeInputListener() {
@@ -52,6 +53,7 @@ internal class PasscodeActivity : AppCompatActivity() {
                     finish()
                 } else {
                     passcodeView.shake()
+                    passcodeView.clear()
                     attemptsCounter++
                     val now = System.currentTimeMillis()
                     if (attemptsCounter > Loki.config.maxAttempts) {
@@ -75,6 +77,7 @@ internal class PasscodeActivity : AppCompatActivity() {
                         }
 
                         if (nextAvailableAttemptTime > now) {
+                            passcodeView.show(false)
                             disabledLayout.show(true)
                             PasscodeManager.setNextAvailableTryTime(
                                 this@PasscodeActivity,
@@ -83,6 +86,7 @@ internal class PasscodeActivity : AppCompatActivity() {
                             updateAppDisableTimer(nextAvailableAttemptTime - now)
                         }
                     }
+
                 }
             }
         })
@@ -90,12 +94,15 @@ internal class PasscodeActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        attemptsCounter =PasscodeManager.getFailAttemptsCounter(this)
+        attemptsCounter = PasscodeManager.getFailAttemptsCounter(this)
         val now = System.currentTimeMillis()
         val timeLeft = PasscodeManager.getNextAvailableTryTime(this) - now
+
         if (timeLeft < ONE_SECOND_MILLIS) {
             disabledLayout.show(false)
+            passcodeView.show(true)
         } else {
+            passcodeView.show(false)
             disabledLayout.show(true)
             updateAppDisableTimer(timeLeft)
         }
@@ -117,6 +124,7 @@ internal class PasscodeActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 disabledLayout.show(false)
+                passcodeView.show(true)
             }
         }
         countDownTimer.start()

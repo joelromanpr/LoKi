@@ -31,7 +31,7 @@ import androidx.appcompat.app.AppCompatActivity
  *
  * Things to note:
  * <ul>
- *      <li> On resume Loki checks if there is a system level passcode set and launches a
+ *      <li> On resume Loki checks if there is a system level passcode is set and launches a
  *      "SystemLock" activity to process. If the previous is not true it checks for the local passcode
  *      instead and launches the "PasscodeLock" activity. If the previous is not true it informs the
  *      PasscodeManager that the feature is not enabled.</li>
@@ -43,7 +43,6 @@ import androidx.appcompat.app.AppCompatActivity
 open class LokiActivity : AppCompatActivity() {
 
     override fun onResume() {
-        super.onResume()
         if (PasscodeManager.shouldLockScreen(this)) {
             val keyGuardMgr = getSystemService(KEYGUARD_SERVICE) as KeyguardManager
             when {
@@ -54,6 +53,7 @@ open class LokiActivity : AppCompatActivity() {
         } else {
             PasscodeManager.setPasscodeActive(this, active = true)
         }
+        super.onResume()
     }
 
     override fun onPause() {

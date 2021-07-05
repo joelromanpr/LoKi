@@ -9,10 +9,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".PasscodeActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SystemLockActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
     </application>
 

@@ -68,25 +68,26 @@ internal object PasscodeManager {
         .putBoolean(KEY_LOKI_PASSCODE_ENABLED, enable).apply()
 
     fun setPasscodeLock(context: Context, passcodeLock: List<Int>) {
-        val encoded: String
+        val encoded: String?
         var salt = getSharedPrefs(context).getString(KEY_LOKI_PASSCODE_SALT, null)
         if (salt == null) {
             salt = randomString()
             getSharedPrefs(context).edit().putString(KEY_LOKI_PASSCODE_SALT, salt).apply()
         }
 
-        if (passcodeLock.isNotEmpty()) {
+        encoded = if (passcodeLock.isNotEmpty()) {
             val saltAndPasscode = salt + passcodeLock.joinToString(separator = "")
             val shaHexEncode = String(Hex.encodeHex(DigestUtils.sha256(saltAndPasscode)))
-            encoded = shaHexEncode
+            shaHexEncode
+        } else
+            null
 
-            getSharedPrefs(context)
-                .edit()
-                .putString(KEY_LOKI_PASSCODE_SALT, encoded)
-                .apply()
+        getSharedPrefs(context)
+            .edit()
+            .putString(KEY_LOKI_PASSCODE, encoded)
+            .apply()
 
-            refreshTimeStamp(context)
-        }
+        refreshTimeStamp(context)
     }
 
     fun isPasscodeValid(context: Context, passcodeLock: List<Int>): Boolean {
