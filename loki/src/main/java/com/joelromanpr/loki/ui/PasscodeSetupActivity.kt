@@ -50,7 +50,7 @@ class PasscodeSetupActivity : AppCompatActivity() {
         passcodeView = findViewById(R.id.passcode_view)
         passcodeView.init()
 
-        val requireOldPin = intent.getBooleanExtra(EXTRA_REQUIRE_OLD_PIN, false)
+        val requireOldPin = intent.getBooleanExtra(EXTRA_REQUIRE_OLD_PIN, false) && PasscodeManager.isLocalPasscodeAvailable(this)
         if (requireOldPin) {
             passcodeView.setTitle(R.string.enter_your_old_pin)
             passcodeView.setPasscodeInputListener(ExistingPasscodeInputListener())
