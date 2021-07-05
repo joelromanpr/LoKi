@@ -37,8 +37,8 @@ internal class PasscodeView @JvmOverloads constructor(
 
     private val pinLength = 4
     private val passcodePinsViews: MutableList<PasscodePinView> = ArrayList(pinLength)
-    private val numberButtonViews: MutableList<Button> = mutableListOf()
-    private lateinit var delButtonView: Button
+    private val numberButtonViews: MutableList<TextView> = mutableListOf()
+    private lateinit var delButtonView: TextView
     private lateinit var titleTextView: TextView
     private lateinit var layoutPasscodePins: View
     private var passcodeInputListener: PasscodeInputListener? = null
@@ -71,12 +71,10 @@ internal class PasscodeView @JvmOverloads constructor(
 
         for (i in numberButtonViews.indices) {
             numberButtonViews[i].tag = i
-            numberButtonViews[i].alpha = 0f
             numberButtonViews[i].setOnClickListener(this)
         }
 
         delButtonView = view.findViewById(R.id.button_delete)
-        delButtonView.alpha = 0f
         delButtonView.setOnClickListener(this)
 
         titleTextView = view.findViewById(R.id.passcode_input_title_textview)

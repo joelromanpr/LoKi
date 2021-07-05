@@ -28,6 +28,7 @@ class PasscodeSetupActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_REQUIRE_OLD_PIN = "require_old_pin"
+
         @JvmOverloads
         fun launch(a: Activity, requireOldPin: Boolean = false) {
             val i = Intent(a, PasscodeSetupActivity::class.java)
@@ -88,8 +89,11 @@ class PasscodeSetupActivity : AppCompatActivity() {
                 }
                 else -> {
                     input = null
-                    passcodeView.setTitle(R.string.set_your_pin_code)
                     passcodeView.shake()
+                    passcodeView.postDelayed({
+                        passcodeView.setTitle(R.string.set_your_pin_code)
+                        passcodeView.clear()
+                    }, ONE_SECOND_MILLIS)
                 }
             }
         }

@@ -65,7 +65,7 @@ internal object PasscodeManager {
 
     fun setFeatureEnabled(context: Context, enable: Boolean) = getSharedPrefs(context)
         .edit()
-        .putBoolean(KEY_LOKI_PASSCODE_ENABLED, enable)
+        .putBoolean(KEY_LOKI_PASSCODE_ENABLED, enable).apply()
 
     fun setPasscodeLock(context: Context, passcodeLock: List<Int>) {
         val encoded: String
