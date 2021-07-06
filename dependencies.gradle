@@ -15,22 +15,19 @@
  *
  */
 
-package com.joelromanpr.loki
+ext.versions = [
+        minSdk           : 26,
+        compileSdk       : 30,
+        versionCode      : 1,
+        versionName      : '1.0.0',
 
-import android.content.Context
+        gradleBuildTool  : '4.2.2',
 
-object Loki {
+        kotlin           : '1.5.10',
+        commonsCodec     : '1.15',
+        appcompat        : '1.3.0',
 
-    val config: LokiConfig get() = _config
-    private var _config: LokiConfig = LokiConfig()
-
-    fun overwriteConfig(newConfig: LokiConfig) {
-        this._config = newConfig
-    }
-
-    fun isEnabled(context: Context) = PasscodeManager.isFeatureEnabled(context)
-    fun disable(context: Context) {
-        PasscodeManager.reset(context)
-    }
-
-}
+        // demo
+        constraintVersion: '2.0.4',
+        material         : '1.3.0'
+]
