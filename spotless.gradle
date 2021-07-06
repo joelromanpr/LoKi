@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2021 joelromanpr (Joel R Sosa)
  *
@@ -15,9 +16,14 @@
  *
  */
 
-
-package com.joelromanpr.loki.listeners
-
-internal abstract class PasscodeInputListener {
-    abstract fun onInputFinish(passcode: List<Int>)
+apply plugin: "com.diffplug.spotless"
+apply from: "$rootDir/dependencies.gradle"
+spotless {
+    kotlin {
+        target "**/*.kt"
+        ktlint("$versions.ktlintGradle").userData(['indent_size': '4', 'continuation_indent_size': '4'])
+        licenseHeaderFile "$rootDir/spotless.license.kt"
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
 }

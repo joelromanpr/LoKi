@@ -15,6 +15,7 @@
  *
  */
 
+
 package com.joelromanpr.loki.ui
 
 import android.content.Context
@@ -108,10 +109,13 @@ internal class PasscodeView @JvmOverloads constructor(
     }
 
     fun shake() {
-        this.postDelayed({
-            val shakeAnimation = AnimationUtils.loadAnimation(context, R.anim.shake)
-            layoutPasscodePins.startAnimation(shakeAnimation)
-        }, 250)
+        this.postDelayed(
+            {
+                val shakeAnimation = AnimationUtils.loadAnimation(context, R.anim.shake)
+                layoutPasscodePins.startAnimation(shakeAnimation)
+            },
+            250
+        )
     }
 
     fun setTitle(@StringRes title: Int) {

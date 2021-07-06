@@ -15,6 +15,7 @@
  *
  */
 
+
 package com.joelromanpr.loki.ui
 
 import android.content.Context
@@ -42,7 +43,6 @@ internal class PasscodePinView @JvmOverloads constructor(
 
     @ColorRes
     private var activePinColor = Loki.config.passcodePinActiveCircleColor
-
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)

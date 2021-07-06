@@ -15,12 +15,12 @@
  *
  */
 
+
 package com.joelromanpr.loki.ui
 
 import android.app.KeyguardManager
 import androidx.appcompat.app.AppCompatActivity
 import com.joelromanpr.loki.PasscodeManager
-
 
 /**
  * Base class for activities that wish to protect its contents with a passcode lock.

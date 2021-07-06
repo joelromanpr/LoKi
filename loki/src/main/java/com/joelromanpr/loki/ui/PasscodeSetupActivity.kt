@@ -15,6 +15,7 @@
  *
  */
 
+
 package com.joelromanpr.loki.ui
 
 import android.app.Activity
@@ -102,10 +103,13 @@ class PasscodeSetupActivity : AppCompatActivity() {
                 else -> {
                     input = null
                     passcodeView.shake()
-                    passcodeView.postDelayed({
-                        passcodeView.setTitle(R.string.set_your_pin_code)
-                        passcodeView.clear()
-                    }, ONE_SECOND_MILLIS)
+                    passcodeView.postDelayed(
+                        {
+                            passcodeView.setTitle(R.string.set_your_pin_code)
+                            passcodeView.clear()
+                        },
+                        ONE_SECOND_MILLIS
+                    )
                 }
             }
         }
@@ -119,9 +123,12 @@ class PasscodeSetupActivity : AppCompatActivity() {
                 passcodeView.clear()
             } else {
                 passcodeView.shake()
-                passcodeView.postDelayed({
-                    passcodeView.clear()
-                }, ONE_SECOND_MILLIS)
+                passcodeView.postDelayed(
+                    {
+                        passcodeView.clear()
+                    },
+                    ONE_SECOND_MILLIS
+                )
             }
         }
     }

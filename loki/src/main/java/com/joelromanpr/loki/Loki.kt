@@ -15,6 +15,7 @@
  *
  */
 
+
 package com.joelromanpr.loki
 
 import android.content.Context
@@ -32,5 +33,4 @@ object Loki {
     fun disable(context: Context) {
         PasscodeManager.reset(context)
     }
-
 }

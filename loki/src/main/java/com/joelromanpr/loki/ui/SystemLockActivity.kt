@@ -15,6 +15,9 @@
  *
  */
 
+
+@file:Suppress("DEPRECATION")
+
 package com.joelromanpr.loki.ui
 
 import android.app.Activity

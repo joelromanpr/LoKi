@@ -15,6 +15,7 @@
  *
  */
 
+
 package com.joelromanpr.loki.utils
 
 import android.content.Context

@@ -15,6 +15,9 @@
  *
  */
 
+
+@file:Suppress("DEPRECATION")
+
 package com.joelromanpr.loki
 
 import android.content.Context
@@ -31,7 +34,6 @@ import com.joelromanpr.loki.utils.ONE_SECOND_MILLIS
 import org.apache.commons.codec.binary.Hex
 import org.apache.commons.codec.digest.DigestUtils
 import java.security.SecureRandom
-
 
 internal object PasscodeManager {
 
@@ -153,5 +155,4 @@ internal object PasscodeManager {
         setFailAttemptsCounter(context, 0)
         refreshTimeStamp(context)
     }
-
 }
