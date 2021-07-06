@@ -124,9 +124,6 @@ internal object PasscodeManager {
         return false
     }
 
-    fun isPasscodeActive(context: Context) = getSharedPrefs(context)
-        .getBoolean(KEY_LOKI_PASSCODE_ACTIVE, false)
-
     fun setPasscodeActive(context: Context, active: Boolean) {
         if (active.not()) refreshTimeStamp(context)
 

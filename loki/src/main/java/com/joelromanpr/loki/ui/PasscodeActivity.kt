@@ -23,7 +23,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.joelromanpr.loki.Loki
 import com.joelromanpr.loki.PasscodeManager
@@ -66,25 +66,9 @@ internal class PasscodeActivity : AppCompatActivity() {
                     passcodeView.clear()
                     attemptsCounter++
                     val now = System.currentTimeMillis()
-                    if (attemptsCounter > Loki.config.maxAttempts) {
+                    if (attemptsCounter >= Loki.config.maxAttempts) {
                         var nextAvailableAttemptTime = now
-                        when {
-                            attemptsCounter == 4 -> {
-                                nextAvailableAttemptTime += MINUTE_IN_MILLIS
-                            }
-                            attemptsCounter == 6 -> {
-                                nextAvailableAttemptTime += MINUTE_IN_MILLIS * 5
-                            }
-                            attemptsCounter == 8 -> {
-                                nextAvailableAttemptTime += MINUTE_IN_MILLIS * 30
-                            }
-                            attemptsCounter == 10 -> {
-                                nextAvailableAttemptTime += HOUR_IN_MILLIS
-                            }
-                            attemptsCounter >= 12 -> {
-                                nextAvailableAttemptTime += HOUR_IN_MILLIS * 4
-                            }
-                        }
+                        nextAvailableAttemptTime += MINUTE_IN_MILLIS
 
                         if (nextAvailableAttemptTime > now) {
                             passcodeView.show(false)
@@ -140,6 +124,7 @@ internal class PasscodeActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+                attemptsCounter = 0
                 disabledLayout.show(false)
                 passcodeView.show(true)
             }
@@ -167,13 +152,13 @@ internal class PasscodeActivity : AppCompatActivity() {
                 )
             }"
         }
-        val tryAgainButton = findViewById<Button>(R.id.try_again_button)
+        val tryAgainButton = findViewById<TextView>(R.id.try_again_button)
         tryAgainButton.text = timeString
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-        if(id == android.R.id.home) onBackPressed()
+        if (id == android.R.id.home) onBackPressed()
         return super.onOptionsItemSelected(item)
     }
 

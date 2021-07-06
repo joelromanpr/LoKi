@@ -24,10 +24,7 @@ class MainActivity : LokiActivity() {
                 android.R.color.holo_blue_dark
             )
         )
-    }
 
-    override fun onResume() {
-        super.onResume()
         findViewById<SwitchCompat>(R.id.enable_pin).apply {
             this.isChecked = Loki.isEnabled(this@MainActivity)
             this.setOnCheckedChangeListener { _, isChecked ->
