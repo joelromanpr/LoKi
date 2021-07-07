@@ -48,7 +48,7 @@ Any activity that you wish to protect with a passcode must inherit a ```LokiActi
 ```kotlin
 class MainActivity : LokiActivity() {}
 ```
-To prompt the user setup their passcode for the first time call the``` launch``` function within ```PasscodeSetupActivity```  
+To prompt the user to setup their passcode for the first time call the ```launch``` function within ```PasscodeSetupActivity```  
 ```kotlin
 PasscodeSetupActivity.launch(this@MainActivity)
 ```
@@ -88,7 +88,10 @@ class DemoApp : Application() {
 }
 ```
 
-
+## Internals
+* Loki will place your app in a "disable" state if the user fails the passcode unlock workflow. Currently users must wait 1 minute before trying again
+* LoKi's ```PasscodeManager``` is in charge of encoding (using a salt) the user's passcode
+* Behavior might change on newer versions. Make sure to reference docs. 
 
 
 ## Additional 🎈
