@@ -38,15 +38,12 @@ dokkaHtml.configure {
         }
     }
 }
-kotlin {
-    explicitApiWarning()
-}
 
 
 dependencies {
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "commons-codec:commons-codec:$versions.commonsCodec"
-   }
+}
 
 apply plugin: "com.vanniktech.maven.publish"
 apply from: '../spotless.gradle'

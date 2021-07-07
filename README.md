@@ -22,7 +22,8 @@ Go to the [Releases](https://github.com/joelromanpr/LoKi/releases) to download t
 </p>
 
 ## Including in your project
-Coming Soon. Will be hosting on MavenCentral
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.joelromanpr/loki.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.joelromanpr%22%20AND%20a:%loki%22)
+
 ### Gradle 
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
 ```gradle
@@ -35,7 +36,7 @@ allprojects {
 And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
 dependencies {
-    implementation "com.github.joelromanpr:loki:1.0.0"
+    implementation "io.github.joelromanpr:loki:1.0.0"
 }
 ```
 

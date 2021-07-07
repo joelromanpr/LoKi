@@ -22,7 +22,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$versions.gradleBuildTool"
+        classpath "com.android.tools.build:gradle:4.2.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.diffplug.spotless:spotless-plugin-gradle:$versions.spotlessGradle"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
@@ -36,8 +36,12 @@ allprojects {
         google()
         mavenCentral()
     }
+    plugins.withId("com.vanniktech.maven.publish") {
+        mavenPublish {
+            sonatypeHost = "S01"
+        }
+    }
 }
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
