@@ -32,12 +32,15 @@ import com.joelromanpr.loki.PasscodeManager
  *
  * Things to note:
  * <ul>
- *      <li> On resume Loki checks if there is a system level passcode is set and launches a
+ *      <li>
+ *          On resume Loki checks if there is a system level passcode is set and launches a
  *      "SystemLock" activity to process. If the previous is not true it checks for the local passcode
  *      instead and launches the "PasscodeLock" activity. If the previous is not true it informs the
- *      PasscodeManager that the feature is not enabled.</li>
+ *      PasscodeManager that the feature is not enabled.
+ *      </li>
  *      <li> On pause Loki refreshes the lock time stamp if needed and sets that the feature is not
- *      active.</li>
+ *      active.
+ *      </li>
  * </ul>
  *
  */

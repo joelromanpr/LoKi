@@ -29,6 +29,9 @@ import com.joelromanpr.loki.listeners.PasscodeInputListener
 import com.joelromanpr.loki.utils.ONE_SECOND_MILLIS
 import java.util.ArrayList
 
+/**
+ * An activity responsible of processing a user's passcode setup workflow.
+ */
 class PasscodeSetupActivity : AppCompatActivity() {
 
     companion object {

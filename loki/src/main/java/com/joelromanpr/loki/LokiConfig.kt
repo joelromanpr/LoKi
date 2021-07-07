@@ -20,6 +20,9 @@ package com.joelromanpr.loki
 
 import androidx.annotation.ColorRes
 
+/**
+ * Class holding information about a Loki configuration.
+ */
 data class LokiConfig(
     val appName: String = "Application",
     val maxAttempts: Int = 4,

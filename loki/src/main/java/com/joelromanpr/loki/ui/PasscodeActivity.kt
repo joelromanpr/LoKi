@@ -36,6 +36,13 @@ import com.joelromanpr.loki.utils.ONE_SECOND_MILLIS
 import com.joelromanpr.loki.utils.show
 import kotlin.math.ceil
 
+/**
+ * An activity responsible of processing a user's passcode unlock workflow.
+ *
+ * The maximum attempts before showing a disabled state is determined by [com.joelromanpr.loki.LokiConfig]
+ *
+ * Currently if a user reaches the max attempts for unlocking it must wait a full minute before trying again.
+ */
 internal class PasscodeActivity : AppCompatActivity() {
 
     companion object {
@@ -137,19 +144,19 @@ internal class PasscodeActivity : AppCompatActivity() {
         val hour = ceil(timeLeft.toDouble() / HOUR_IN_MILLIS).toInt()
         val timeString: String = if (minute > 60) {
             "${getString(R.string.try_again_in)} ${
-            resources.getQuantityString(
-                R.plurals.hour,
-                hour,
-                hour
-            )
+                resources.getQuantityString(
+                    R.plurals.hour,
+                    hour,
+                    hour
+                )
             }"
         } else {
             "${getString(R.string.try_again_in)} ${
-            resources.getQuantityString(
-                R.plurals.minute,
-                minute,
-                minute
-            )
+                resources.getQuantityString(
+                    R.plurals.minute,
+                    minute,
+                    minute
+                )
             }"
         }
         val tryAgainButton = findViewById<TextView>(R.id.try_again_button)

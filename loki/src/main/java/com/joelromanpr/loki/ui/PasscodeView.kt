@@ -29,6 +29,9 @@ import androidx.annotation.StringRes
 import com.joelromanpr.loki.R
 import com.joelromanpr.loki.listeners.PasscodeInputListener
 
+/**
+ * A custom View widget that holds passcode PINS, input button and a title header.
+ */
 internal class PasscodeView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

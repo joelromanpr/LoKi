@@ -35,6 +35,9 @@ import org.apache.commons.codec.binary.Hex
 import org.apache.commons.codec.digest.DigestUtils
 import java.security.SecureRandom
 
+/**
+ * A passcode manager controlling every aspect of a passcode lock.
+ */
 internal object PasscodeManager {
 
     private fun getSharedPrefs(context: Context) =

@@ -31,6 +31,9 @@ import com.joelromanpr.loki.PasscodeManager
 import com.joelromanpr.loki.R
 import com.joelromanpr.loki.utils.CONFIRM_CREDENTIAL
 
+/**
+ * An activity responsible of processing a user's passcode at the system level.
+ */
 internal class SystemLockActivity : AppCompatActivity() {
 
     companion object {

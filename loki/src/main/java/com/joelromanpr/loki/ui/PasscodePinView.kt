@@ -30,6 +30,9 @@ import com.joelromanpr.loki.Loki
 import com.joelromanpr.loki.utils.convertDpToPixel
 import kotlin.math.min
 
+/**
+ * A custom View representing a passcode PIN.
+ */
 internal class PasscodePinView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

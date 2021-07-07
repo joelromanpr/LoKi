@@ -18,6 +18,10 @@
 
 package com.joelromanpr.loki.listeners
 
+/**
+ * Abstract definition about an action within [com.joelromanpr.loki.ui.PasscodeActivity]
+ * and [com.joelromanpr.loki.ui.SystemLockActivity]
+ */
 internal abstract class PasscodeInputListener {
     abstract fun onInputFinish(passcode: List<Int>)
 }

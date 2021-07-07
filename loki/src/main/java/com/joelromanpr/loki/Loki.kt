@@ -20,6 +20,10 @@ package com.joelromanpr.loki
 
 import android.content.Context
 
+/**
+ * Singleton object that allows library consumers to overwrite the default configuration,
+ * check passcode enabled status and disable as needed.
+ */
 object Loki {
 
     val config: LokiConfig get() = _config
