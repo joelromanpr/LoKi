@@ -25,6 +25,7 @@ ext.versions = [
         spotlessGradle   : '5.13.0',
         ktlintGradle     : '0.41.0',
         dokkaGradle      : '1.4.32',
+        mavenPublish     : '0.15.1',
 
         kotlin           : '1.5.10',
         commonsCodec     : '1.15',

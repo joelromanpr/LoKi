@@ -48,4 +48,5 @@ dependencies {
     implementation "commons-codec:commons-codec:$versions.commonsCodec"
    }
 
+apply plugin: "com.vanniktech.maven.publish"
 apply from: '../spotless.gradle'
