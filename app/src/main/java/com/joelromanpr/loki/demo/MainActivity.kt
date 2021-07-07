@@ -23,7 +23,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SwitchCompat
 import com.joelromanpr.loki.Loki
-import com.joelromanpr.loki.LokiConfig
 import com.joelromanpr.loki.ui.LokiActivity
 import com.joelromanpr.loki.ui.PasscodeSetupActivity
 
@@ -34,13 +33,6 @@ class MainActivity : LokiActivity() {
         findViewById<View>(R.id.launch_second_activity).setOnClickListener {
             startActivity(Intent(this, MainActivity2::class.java))
         }
-        Loki.overwriteConfig(
-            LokiConfig(
-                appName = "LoKi Demo",
-                maxAttempts = 1,
-                android.R.color.holo_blue_dark
-            )
-        )
 
         findViewById<SwitchCompat>(R.id.enable_pin).apply {
             this.isChecked = Loki.isEnabled(this@MainActivity)

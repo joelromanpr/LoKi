@@ -144,19 +144,19 @@ internal class PasscodeActivity : AppCompatActivity() {
         val hour = ceil(timeLeft.toDouble() / HOUR_IN_MILLIS).toInt()
         val timeString: String = if (minute > 60) {
             "${getString(R.string.try_again_in)} ${
-                resources.getQuantityString(
-                    R.plurals.hour,
-                    hour,
-                    hour
-                )
+            resources.getQuantityString(
+                R.plurals.hour,
+                hour,
+                hour
+            )
             }"
         } else {
             "${getString(R.string.try_again_in)} ${
-                resources.getQuantityString(
-                    R.plurals.minute,
-                    minute,
-                    minute
-                )
+            resources.getQuantityString(
+                R.plurals.minute,
+                minute,
+                minute
+            )
             }"
         }
         val tryAgainButton = findViewById<TextView>(R.id.try_again_button)
