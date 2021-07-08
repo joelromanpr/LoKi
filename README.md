@@ -22,7 +22,7 @@ Go to the [Releases](https://github.com/joelromanpr/LoKi/releases) to download t
 </p>
 
 ## Including in your project
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.joelromanpr/loki.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.joelromanpr%22%20AND%20a:%loki%22)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.joelromanpr/loki.svg?label=Maven%20Central)](https://search.maven.org/artifact/io.github.joelromanpr/loki)
 
 ### Gradle 
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
